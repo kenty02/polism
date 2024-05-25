@@ -1,0 +1,24 @@
+{
+  "name": "enforcer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx src/index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slack/bolt": "^3.18.0",
+    "@slack/events-api": "^3.0.1",
+    "@slack/web-api": "^7.0.4",
+    "@supabase/supabase-js": "^2.43.4",
+    "discord.js": "^14.15.2",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.7.3",
+    "@types/node": "^20.12.12",
+    "tsx": "^4.11.0"
+  }
+}
