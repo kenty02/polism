@@ -2,6 +2,9 @@
 
 ![img.png](img.png)
 ## 概要
+
+**TL;DR Regoという言語を使ってDiscordやSlackのBotがローコードで書けます**
+
 DiscordやSlackのサーバー（ワークスペース）を、Regoポリシーで管理するためのツールです。
 
 一つのポリシーをDiscord,Slackの両方に適用することができます。
