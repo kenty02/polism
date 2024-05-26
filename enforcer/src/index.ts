@@ -59,7 +59,7 @@ client.on(Events.MessageReactionAdd, async (reaction, user) => {
     await processDiscordEventSafe(reaction.message.guildId, {
         event: "reaction_add",
         user_id: user.id,
-        user_name: user.username,
+        user_name: user.displayName,
         message_id: reaction.message.id,
         emoji_name: reaction.emoji.name,
     });
@@ -68,7 +68,7 @@ client.on(Events.MessageReactionRemove, async (reaction, user) => {
     await processDiscordEventSafe(reaction.message.guildId, {
         event: "reaction_remove",
         user_id: user.id,
-        user_name: user.username,
+        user_name: user.displayName,
         message_id: reaction.message.id,
         emoji_name: reaction.emoji.name,
     });
@@ -101,7 +101,7 @@ app.event('reaction_added', async ({ event, say }) => {
     await processSlackEventSafe(say, {
         event: "reaction_add",
         user_id: event.user,
-        user_name: event.user,
+        user_name: (await app.client.users.profile.get({user: event.user })).profile!.first_name!,
         message_id: event.item.ts,
         emoji_name: event.reaction,
     });
@@ -110,7 +110,7 @@ app.event('reaction_removed', async ({ event, say }) => {
     await processSlackEventSafe(say, {
         event: "reaction_remove",
         user_id: event.user,
-        user_name: event.user,
+        user_name: (await app.client.users.profile.get({user: event.user })).profile!.first_name!,
         message_id: event.item.ts,
         emoji_name: event.reaction,
     });
