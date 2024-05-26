@@ -1,7 +1,0 @@
-### GET request to example server
-POST http://localhost:1324/evaluate/1
-Accept: application/json
-Content-Type: application/json
-
-{ "query": "data.polism", "input": {"event":"reaction_add", "emoji_name": "hoge"}}
-###
